@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jongerentaal</title>
+    <style>
+        /* Algemene stijl: donker thema */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Horizontaal centreren */
+            justify-content: center; /* Verticaal centreren */
+            min-height: 100%; /* Volledige hoogte van het scherm */
+            margin: 0;
+            text-align: center; /* Tekst centreren */
+            background-color: #121212; /* Donkere achtergrondkleur */
+            color: #ffffff; /* Witte tekstkleur */
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #1e1e1e; /* Donkere achtergrond voor de tabel */
+            color: #ffffff; /* Witte tekstkleur */
+        }
+
+        th, td {
+            border: 1px solid #333333; /* Donkergrijze randen */
+            padding: 10px;
+        }
+
+        th {
+            background-color: #333333; /* Donkergrijze koptekst */
+        }
+
+        #message {
+            display: none; /* Verberg het element */
+            background-color: #1e1e1e; /* Donkere achtergrond voor geheime info */
+            border: 1px solid #333333; /* Donkergrijze rand */
+            color: #ffffff; /* Witte tekstkleur */
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        h1, p {
+            margin-bottom: 20px;
+        }
+
+        #touch-area {
+            width: 90%; /* Breedte van touch-area (bijna volledige breedte van het scherm) */
+            height: 150px; /* Hoogte van touch-area (groter en duidelijker) */
+            background-color: #444444; /* Donkere achtergrondkleur met een lichtere tint voor contrast */
+            color: #ffffff; /* Witte tekstkleur */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px; /* Ruimte onder touch-area */
+            border-radius: 20px; /* Ronde hoeken voor visuele aantrekkelijkheid */
+            font-size: 18px; /* Grotere tekst voor betere leesbaarheid */
+        }
+
+        a {
+            color: #40E0D0; /* Turquoise kleur voor links */
+            text-decoration: underline; /* Onderstreep links om ze herkenbaar te maken */
+        }
+
+        a:hover {
+            color: #20B2AA; /* Iets donkerdere turquoise kleur bij hover */
+        }
+    </style>
+    <link rel="icon" href="logo.png" type="image/png">
+</head>
+<body>
+    <h1>Hieronder vind je een lijst met jongerentaal:</h1>
+
+    <!-- Tabel met afkortingen -->
+    <table>
+        <thead>
+            <tr>
+                <th>Woord</th>
+                <th>Betekenis</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Noncha</td>
+                <td>Nonchalant, chill, zorgeloos</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Touch-area zichtbaar maken -->
+    <div id="touch-area"></div>
+
+  
+   <!-- Verborgen geheime informatie -->
+    <div id="message"></div>
+
+    <script>
+        // Beveiliging tegen rechtsklikken (contextmenu uitschakelen)
+        document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+        // Beveiliging tegen inspectietools (F12, Ctrl+Shift+I en Ctrl+U uitschakelen)
+        document.addEventListener('keydown', function(event) {
+            if (
+                event.key === 'F12' || 
+                (event.ctrlKey && event.shiftKey && event.key === 'I') ||
+                (event.ctrlKey && event.key === 'u') // Blokkeer Ctrl + U
+            ) {
+                event.preventDefault();
+                alert("Deze actie is uitgeschakeld!");
+            }
+        });
+    </script>
+</body>
+</html>
